@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class C_OptimizedSolutionUsingHashMap {
 
+    // Time Complexity : O(N)
     public int[] twoSum(int[] nums, int target) {
         Map<Integer,Integer> mapOfNumbers = new HashMap<Integer, Integer>();
         int[] returnableArray = new int[2];
