@@ -1,8 +1,7 @@
-package A_LinkedList.Introduction;
+package A_LinkedList.A_Introduction;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.List;
 
 public class A_WorkingWithBuildInLinkedList {
 
