@@ -20,6 +20,20 @@ The algorithm keeps swapping an element with the one at its correct index until 
 
 ---
 
+---
+
+## 📉 Worst-Case Swap Analysis
+
+In the **worst-case scenario**, Cyclic Sort performs **`n - 1` swaps**, where `n` is the length of the array.
+
+### 🔍 Why?
+
+- Each swap places at least one element in its correct position.
+- After each successful swap, one element reaches its target index.
+- So, in the worst case, all but one element need to be moved → **`n - 1` swaps**.
+
+---
+
 
 ## 🧩 Common Problems Solved Using Cyclic Sort
 
@@ -77,3 +91,4 @@ for (int i = 0; i < arr.length; ) {
 }
 
 ---
+
