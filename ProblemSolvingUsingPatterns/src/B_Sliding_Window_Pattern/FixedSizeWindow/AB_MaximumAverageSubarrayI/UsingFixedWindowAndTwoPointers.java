@@ -1,4 +1,4 @@
-package B_Sliding_Window_Pattern.FixedSizeWindow.A_MaximumAverageSubarrayI;
+package B_Sliding_Window_Pattern.FixedSizeWindow.AB_MaximumAverageSubarrayI;
 
 public class UsingFixedWindowAndTwoPointers {
 
