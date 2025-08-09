@@ -1,4 +1,4 @@
-package B_Sliding_Window_Pattern.SubStringTemplateProblems.A_FindAllAnagramsInAString;
+package B_Sliding_Window_Pattern.SubStringTemplateProblemsUsingSlidingWindow.A_FindAllAnagramsInAString;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package B_Sliding_Window_Pattern.SubStringTemplateProblems;
+package B_Sliding_Window_Pattern.SubStringTemplateProblemsUsingSlidingWindow;
 
 import java.util.HashMap;
 import java.util.LinkedList;
