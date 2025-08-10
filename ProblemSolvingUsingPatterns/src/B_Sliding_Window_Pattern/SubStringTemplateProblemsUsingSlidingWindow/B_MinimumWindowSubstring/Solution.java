@@ -34,10 +34,10 @@ public class Solution {
             while(counter == 0){
                 char tempc = s.charAt(begin);
                 if(map.containsKey(tempc)){
-                    map.put(tempc, map.get(tempc) + 1);
-                    if(map.get(tempc) > 0){
+                    if(map.get(tempc) == 0){
                         counter++;
                     }
+                    map.put(tempc, map.get(tempc) + 1);
                 }
                 if(end-begin < len){
                     len = end - begin;

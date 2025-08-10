@@ -52,8 +52,8 @@ public class TemplateSolution {
 
                 char tempc = s.charAt(begin);//***be careful here: choose the char at begin pointer, NOT the end pointer
                 if(map.containsKey(tempc)){
+                    if(map.get(tempc) == 0) counter++; // need to increase counter when it first adds back to the map
                     map.put(tempc, map.get(tempc) + 1);//plus or minus one
-                    if(map.get(tempc) > 0) counter++;//modify the counter according the requirement(different condition).
                 }
 
                 /* save / update(min/max) the result if find a target*/

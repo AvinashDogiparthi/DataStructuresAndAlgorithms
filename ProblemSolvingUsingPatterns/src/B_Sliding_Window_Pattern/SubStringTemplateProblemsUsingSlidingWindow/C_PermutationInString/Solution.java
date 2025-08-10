@@ -32,8 +32,8 @@ public class Solution {
             while(counter == 0){
                 char beginChar = s2.charAt(begin);
                 if(map.containsKey(beginChar)){
+                    if(map.get(beginChar) == 0) counter++;
                     map.put(beginChar,map.get(beginChar)+1);
-                    if(map.get(beginChar) > 0) counter++;
                 }
 
                 // added this if condition to check the length
