@@ -18,6 +18,7 @@ public class Solution {
     public static List<Integer> findAnagrams(String s, String t) {
         List<Integer> result = new LinkedList<>();
         if(t.length()> s.length()) return result;
+
         Map<Character, Integer> map = new HashMap<>();
         for(char c : t.toCharArray()){
             map.put(c, map.getOrDefault(c, 0) + 1);
