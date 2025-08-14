@@ -34,6 +34,12 @@ In the **worst-case scenario**, Cyclic Sort performs **`n - 1` swaps**, where `n
 
 ---
 
+## Reference
+
+🔗 **Kunal Kushwaha Cyclic Sort Video:** [link](https://www.youtube.com/watch?v=JfinxytTYFQ&t=70s)
+
+---
+
 
 ## 🧩 Common Problems Solved Using Cyclic Sort
 

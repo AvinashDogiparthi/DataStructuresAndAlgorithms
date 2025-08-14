@@ -26,11 +26,8 @@ public class Solution {
 
             while(counter >= 3){
                 int numAtStart = fruits[start];
+                if(map.get(numAtStart) == 1) counter--;
                 map.put(numAtStart,map.get(numAtStart)-1);
-                if(map.get(numAtStart) == 0) {
-                    counter--;
-                    map.remove(numAtStart);
-                }
 
                 start++;
             }
@@ -41,6 +38,4 @@ public class Solution {
 
         return len;
     }
-
-
 }
