@@ -1,4 +1,4 @@
-package E_ProblemSolvingUsingStackAndMonotonicStack.D_DailyTemperatures;
+package E_StackAndMonotonicStack.D_DailyTemperatures;
 
 import java.util.Stack;
 

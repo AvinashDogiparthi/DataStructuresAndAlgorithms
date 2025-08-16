@@ -1,6 +1,5 @@
-package E_ProblemSolvingUsingStackAndMonotonicStack.B_NextGreaterElement;
+package E_StackAndMonotonicStack.B_NextGreaterElement;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;

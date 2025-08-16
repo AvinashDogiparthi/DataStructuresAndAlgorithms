@@ -1,4 +1,4 @@
-package E_ProblemSolvingUsingStackAndMonotonicStack.C_NextGreaterElementII;
+package E_StackAndMonotonicStack.C_NextGreaterElementII;
 
 import java.util.Arrays;
 import java.util.Stack;
