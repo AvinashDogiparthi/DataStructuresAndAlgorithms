@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.A_TwoSum_Easy;
+package A_Two_Pointers.A_TwoSum_Easy;
 
 import java.util.HashMap;
 import java.util.Map;

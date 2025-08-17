@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.E_SquaresOfASortedArray;
+package A_Two_Pointers.E_SquaresOfASortedArray;
 
 import java.util.Arrays;
 

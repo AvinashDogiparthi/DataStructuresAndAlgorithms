@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.D_Remove_Duplicate_LinkedList;
+package A_Two_Pointers.D_Remove_Duplicate_LinkedList;
 
 public class ListNode {
     public int val;

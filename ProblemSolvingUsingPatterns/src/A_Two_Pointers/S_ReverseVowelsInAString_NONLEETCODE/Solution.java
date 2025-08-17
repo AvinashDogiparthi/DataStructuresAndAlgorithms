@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.S_ReverseVowelsInAString_NONLEETCODE;
+package A_Two_Pointers.S_ReverseVowelsInAString_NONLEETCODE;
 
 import java.util.Set;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.P_3SumSmaller;
+package A_Two_Pointers.P_3SumSmaller;
 
 import java.util.Arrays;
 

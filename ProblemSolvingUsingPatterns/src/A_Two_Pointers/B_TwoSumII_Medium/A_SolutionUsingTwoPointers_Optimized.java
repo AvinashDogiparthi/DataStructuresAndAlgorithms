@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.B_TwoSumII_Medium;
+package A_Two_Pointers.B_TwoSumII_Medium;
 
 public class A_SolutionUsingTwoPointers_Optimized {
 
