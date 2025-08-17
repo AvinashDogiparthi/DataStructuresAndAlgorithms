@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.N_3Sum;
+package A_Two_Pointers.N_3Sum;
 
 import java.util.*;
 

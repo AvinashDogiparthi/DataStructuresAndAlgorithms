@@ -1,6 +1,6 @@
-package A_Two_Pointers_Pattern.K_LinkedListCycleII;
+package A_Two_Pointers.K_LinkedListCycleII;
 
-import A_Two_Pointers_Pattern.D_Remove_Duplicate_LinkedList.ListNode;
+import A_Two_Pointers.D_Remove_Duplicate_LinkedList.ListNode;
 
 public class UsingFloydCycleDetection {
 

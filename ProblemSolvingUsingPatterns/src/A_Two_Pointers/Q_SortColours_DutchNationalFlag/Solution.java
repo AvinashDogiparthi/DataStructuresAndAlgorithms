@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.Q_SortColours_DutchNationalFlag;
+package A_Two_Pointers.Q_SortColours_DutchNationalFlag;
 
 public class Solution {
 

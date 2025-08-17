@@ -1,6 +1,6 @@
-package A_Two_Pointers_Pattern.G_IntersectionOfTwoLinkedList;
+package A_Two_Pointers.G_IntersectionOfTwoLinkedList;
 
-import A_Two_Pointers_Pattern.D_Remove_Duplicate_LinkedList.ListNode;
+import A_Two_Pointers.D_Remove_Duplicate_LinkedList.ListNode;
 
 public class Intersection {
 

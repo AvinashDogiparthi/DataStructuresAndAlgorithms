@@ -1,6 +1,6 @@
-package A_Two_Pointers_Pattern.J_LinkedListCycle;
+package A_Two_Pointers.J_LinkedListCycle;
 
-import A_Two_Pointers_Pattern.D_Remove_Duplicate_LinkedList.ListNode;
+import A_Two_Pointers.D_Remove_Duplicate_LinkedList.ListNode;
 
 public class DetectCycleInLinkedList {
     public boolean hasCycle(ListNode head) {

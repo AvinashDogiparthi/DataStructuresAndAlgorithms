@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.L_HappyNumber;
+package A_Two_Pointers.L_HappyNumber;
 
 public class UsingSlowAndFastPointers {
 

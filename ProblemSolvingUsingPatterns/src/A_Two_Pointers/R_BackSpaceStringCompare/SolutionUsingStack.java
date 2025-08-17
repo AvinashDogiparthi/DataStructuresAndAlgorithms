@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.R_BackSpaceStringCompare;
+package A_Two_Pointers.R_BackSpaceStringCompare;
 
 public class SolutionUsingStack {
     public boolean backspaceCompare(String S, String T) {

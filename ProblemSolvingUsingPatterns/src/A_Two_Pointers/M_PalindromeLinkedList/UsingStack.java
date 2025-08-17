@@ -1,6 +1,6 @@
-package A_Two_Pointers_Pattern.M_PalindromeLinkedList;
+package A_Two_Pointers.M_PalindromeLinkedList;
 
-import A_Two_Pointers_Pattern.D_Remove_Duplicate_LinkedList.ListNode;
+import A_Two_Pointers.D_Remove_Duplicate_LinkedList.ListNode;
 
 import java.util.Stack;
 

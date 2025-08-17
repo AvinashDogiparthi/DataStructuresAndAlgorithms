@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.O_3SumClosest;
+package A_Two_Pointers.O_3SumClosest;
 
 import java.util.Arrays;
 

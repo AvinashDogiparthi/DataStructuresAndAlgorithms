@@ -1,6 +1,6 @@
-package A_Two_Pointers_Pattern.H_RemoveDuplicatesFromSortedListII;
+package A_Two_Pointers.H_RemoveDuplicatesFromSortedListII;
 
-import A_Two_Pointers_Pattern.D_Remove_Duplicate_LinkedList.ListNode;
+import A_Two_Pointers.D_Remove_Duplicate_LinkedList.ListNode;
 
 public class Solution {
 

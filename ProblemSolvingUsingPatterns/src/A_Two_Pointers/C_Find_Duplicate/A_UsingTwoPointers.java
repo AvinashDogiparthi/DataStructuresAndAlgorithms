@@ -1,4 +1,4 @@
-package A_Two_Pointers_Pattern.C_Find_Duplicate;
+package A_Two_Pointers.C_Find_Duplicate;
 
 import java.util.Arrays;
 
