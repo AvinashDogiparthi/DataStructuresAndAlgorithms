@@ -1,4 +1,4 @@
-package C_CyclicSort_Pattern.F_FirstMissingPositive;
+package C_CyclicSort.F_FirstMissingPositive;
 
 public class Solution {
 

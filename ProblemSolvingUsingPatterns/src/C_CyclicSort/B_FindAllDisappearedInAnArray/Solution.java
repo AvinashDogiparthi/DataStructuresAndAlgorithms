@@ -1,4 +1,4 @@
-package C_CyclicSort_Pattern.B_FindAllDisappearedInAnArray;
+package C_CyclicSort.B_FindAllDisappearedInAnArray;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package C_CyclicSort_Pattern.D_FindAllDuplicatesInAnArray;
+package C_CyclicSort.D_FindAllDuplicatesInAnArray;
 
 import java.util.ArrayList;
 import java.util.List;

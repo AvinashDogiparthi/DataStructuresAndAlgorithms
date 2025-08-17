@@ -1,4 +1,4 @@
-package C_CyclicSort_Pattern.E_SetMismatch;
+package C_CyclicSort.E_SetMismatch;
 
 public class Solution {
 

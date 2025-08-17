@@ -1,4 +1,4 @@
-package C_CyclicSort_Pattern.A_MissingNumber;
+package C_CyclicSort.A_MissingNumber;
 
 public class NormalSolution {
 

@@ -1,4 +1,4 @@
-package C_CyclicSort_Pattern.C_FindTheDuplicateNumber;
+package C_CyclicSort.C_FindTheDuplicateNumber;
 
 public class Solution {
 
