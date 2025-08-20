@@ -26,7 +26,7 @@ public class Solution {
                     uniqueTriplets.add(Arrays.asList(nums[i],nums[left],nums[right]));
                     left ++;
                     right --;
-                } else if ( sum < 1) {
+                } else if ( sum < 0) {
                     left ++;
                 } else {
                     right --;
