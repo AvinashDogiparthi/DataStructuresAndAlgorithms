@@ -1,4 +1,4 @@
-package E_StackAndMonotonicStack.B_NextGreaterElement;
+package E_StackAndMonotonicStack.D_NextGreaterElement;
 
 import java.util.HashMap;
 import java.util.Map;

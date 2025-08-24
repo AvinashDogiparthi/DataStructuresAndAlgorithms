@@ -1,4 +1,4 @@
-package E_StackAndMonotonicStack.I_TrappingRainWater;
+package E_StackAndMonotonicStack.K_TrappingRainWater;
 
 public class NormalApproach {
 
