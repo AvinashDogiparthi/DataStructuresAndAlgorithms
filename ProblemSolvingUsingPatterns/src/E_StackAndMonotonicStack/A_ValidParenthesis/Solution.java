@@ -5,11 +5,15 @@ import java.util.Stack;
 public class Solution {
 
     public boolean isValid(String s) {
+
         Stack<Character> stack = new Stack<>();
 
-        for(char c : s.toCharArray()){
+        int i = 0;
+        while(i < s.length()){
 
-            if(c == '(' || c =='[' || c == '{'){
+            char c = s.charAt(i);
+
+            if(c == '(' || c == '{' || c == '['){
                 stack.push(c);
             } else {
 
@@ -17,24 +21,21 @@ public class Solution {
                     return false;
                 }
 
-                if(c == ')'){
-                    if( stack.pop() != '('){
-                        return false;
-                    }
+
+                if(c == ')' && stack.pop() != '('){
+                    return false;
                 }
 
-                if(c == ']'){
-                    if(stack.pop() != '['){
-                        return false;
-                    }
+                if(c == '}' && stack.pop() != '{'){
+                    return false;
                 }
 
-                if(c == '}'){
-                    if( stack.pop() != '{'){
-                        return false;
-                    }
+                if(c == ']' && stack.pop() != '['){
+                    return false;
                 }
             }
+
+            i++;
         }
 
         return stack.isEmpty();

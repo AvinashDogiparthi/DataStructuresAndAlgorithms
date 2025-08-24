@@ -12,25 +12,26 @@ public class Solution {
 
     public static List<Integer> findDuplicates(int[] nums) {
 
-        List<Integer> duplicates = new ArrayList<>();
         int i = 0;
         while(i < nums.length){
-            int correctIndex = nums[i] - 1;
-            if(nums[i] != nums[correctIndex]){
+
+            int correctIndex = nums[i]-1;
+            if(correctIndex < nums.length && nums[i] != nums[correctIndex]){
                 swap(nums,i,correctIndex);
             } else {
                 i++;
             }
         }
 
-        List<Integer> duplicatesList = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         for(int index = 0;index < nums.length;index++){
+
             if(nums[index] != index + 1){
-                duplicatesList.add(nums[index]);
+                result.add(nums[index]);
             }
         }
 
-        return duplicatesList;
+        return result;
     }
 
     public static void swap(int[] arr, int first, int second){
