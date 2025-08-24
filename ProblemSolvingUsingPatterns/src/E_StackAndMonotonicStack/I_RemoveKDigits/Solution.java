@@ -1,4 +1,4 @@
-package E_StackAndMonotonicStack.G_RemoveKDigits;
+package E_StackAndMonotonicStack.I_RemoveKDigits;
 
 import java.util.Stack;
 

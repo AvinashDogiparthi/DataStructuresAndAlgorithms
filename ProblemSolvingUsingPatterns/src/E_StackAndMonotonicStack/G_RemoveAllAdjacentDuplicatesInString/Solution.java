@@ -1,4 +1,4 @@
-package E_StackAndMonotonicStack.E_RemoveAllAdjacentDuplicatesInString;
+package E_StackAndMonotonicStack.G_RemoveAllAdjacentDuplicatesInString;
 
 import java.util.Stack;
 

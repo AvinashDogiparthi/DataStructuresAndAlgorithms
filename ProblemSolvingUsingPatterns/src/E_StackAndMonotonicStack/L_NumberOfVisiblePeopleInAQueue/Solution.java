@@ -1,4 +1,4 @@
-package E_StackAndMonotonicStack.J_NumberOfVisiblePeopleInAQueue;
+package E_StackAndMonotonicStack.L_NumberOfVisiblePeopleInAQueue;
 
 import java.util.Stack;
 

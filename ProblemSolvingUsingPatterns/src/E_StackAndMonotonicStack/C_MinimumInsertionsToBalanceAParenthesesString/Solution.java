@@ -1,4 +1,4 @@
-package E_StackAndMonotonicStack.L_MinimumInsertionsToBalanceAParenthesesString;
+package E_StackAndMonotonicStack.C_MinimumInsertionsToBalanceAParenthesesString;
 
 public class Solution {
 
