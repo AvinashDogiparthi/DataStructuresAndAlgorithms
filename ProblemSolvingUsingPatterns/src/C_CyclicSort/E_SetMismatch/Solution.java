@@ -10,9 +10,11 @@ public class Solution {
     public static int[] findErrorNums(int[] nums) {
 
         int i = 0;
-        while(i<nums.length){
-            int correctIndex = nums[i] - 1;
-            if(nums[i] != nums[correctIndex]){
+        while(i < nums.length){
+
+            int correctIndex = nums[i]-1;
+
+            if(correctIndex < nums.length && nums[i] != nums[correctIndex]){
                 swap(nums,i,correctIndex);
             } else {
                 i++;
@@ -20,6 +22,7 @@ public class Solution {
         }
 
         for(int index = 0;index < nums.length;index++){
+
             if(nums[index] != index + 1){
                 return new int[]{nums[index],index+1};
             }
