@@ -1,4 +1,4 @@
-package F_HashMap.FirstUniqueCharacterInAString_387;
+package F_HashMap.A_FirstUniqueCharacterInAString_387;
 
 import java.util.HashMap;
 import java.util.Map;
