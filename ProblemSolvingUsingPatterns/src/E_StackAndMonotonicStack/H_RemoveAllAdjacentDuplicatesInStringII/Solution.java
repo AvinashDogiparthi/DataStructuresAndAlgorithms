@@ -20,22 +20,31 @@ public class Solution {
     public static String removeDuplicates(String s, int k) {
 
         Stack<Pair> stack = new Stack<>();
+        StringBuilder result = new StringBuilder();
 
-        for (char c : s.toCharArray()) {
-            if (!stack.isEmpty() && stack.peek().ch == c) {
-                stack.peek().count++;
-                if (stack.peek().count == k) {
-                    stack.pop();
-                }
+        for(char ch : s.toCharArray()){
+
+            if(stack.isEmpty()){
+                stack.push(new Pair(1,ch));
             } else {
-                stack.push(new Pair(c, 1));
+
+                if(stack.peek().ch == ch){
+
+                    stack.peek().count++;
+
+                    if(stack.peek().count == k){
+                        stack.pop();
+                    }
+                } else {
+                    stack.push(new Pair(1,ch));
+                }
+
             }
         }
 
-        StringBuilder result = new StringBuilder();
-        for (Pair p : stack) {
-            for (int i = 0; i < p.count; i++) {
-                result.append(p.ch);
+        for(Pair pair : stack){
+            for(int iteration = 0;iteration < pair.count;iteration++ ){
+                result.append(pair.ch);
             }
         }
 
@@ -46,7 +55,7 @@ public class Solution {
         char ch;
         int count;
 
-        Pair(char ch, int count) {
+        Pair(int count,char ch) {
             this.ch = ch;
             this.count = count;
         }
