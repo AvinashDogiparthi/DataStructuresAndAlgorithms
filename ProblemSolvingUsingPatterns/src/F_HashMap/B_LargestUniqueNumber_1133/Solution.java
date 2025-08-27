@@ -1,4 +1,4 @@
-package F_HashMap.LargestUniqueNumber_1133;
+package F_HashMap.B_LargestUniqueNumber_1133;
 
 import java.util.HashMap;
 import java.util.Map;
