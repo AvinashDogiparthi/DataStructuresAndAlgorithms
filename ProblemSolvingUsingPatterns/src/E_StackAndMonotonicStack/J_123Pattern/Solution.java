@@ -4,7 +4,13 @@ import java.util.Stack;
 
 public class Solution {
 
-    public boolean find132pattern(int[] nums) {
+    public static void main(String[] args) {
+
+        boolean isPattern = find132pattern(new int[]{3,1,4,2});
+        System.out.println(isPattern);
+    }
+
+    public static boolean find132pattern(int[] nums) {
 
         int max = Integer.MIN_VALUE;
         Stack<Integer> stack = new Stack<>();
