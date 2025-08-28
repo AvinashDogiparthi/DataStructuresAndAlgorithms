@@ -4,14 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 class Solution {
-
-    public static void main(String[] args) {
-
-        boolean isValid = wordPattern("abba","dog cat cat dog");
-        System.out.println(isValid);
-
-    }
-    public static boolean wordPattern(String pattern, String s) {
+    public boolean wordPattern(String pattern, String s) {
         String[] words = s.split(" ");
         if (pattern.length() != words.length) return false;
 
