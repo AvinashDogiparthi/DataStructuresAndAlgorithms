@@ -1,4 +1,4 @@
-package I_RecursionSubsetsAndSubsequences;
+package H_Recursion.Q_RecursionSubsetsAndSubsequences;
 
 import java.util.ArrayList;
 import java.util.List;

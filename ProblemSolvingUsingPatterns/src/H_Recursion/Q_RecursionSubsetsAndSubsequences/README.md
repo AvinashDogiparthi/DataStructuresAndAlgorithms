@@ -39,8 +39,6 @@ At each step:
 ## ✅ Template 1 — Print Only
 
 ```java
-package I_RecursionSubsetsAndSubsequences;
-
 public class TemplateSolutionPrint {
 
     public static void main(String[] args) {
@@ -72,7 +70,6 @@ public class TemplateSolutionPrint {
 ## ✅ Template 2 — Return All Subsequences as a List
 
 ```java
-package I_RecursionSubsetsAndSubsequences;
 
 import java.util.ArrayList;
 import java.util.List;
