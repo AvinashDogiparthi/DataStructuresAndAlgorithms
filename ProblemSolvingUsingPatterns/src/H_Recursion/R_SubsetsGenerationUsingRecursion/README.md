@@ -1,6 +1,6 @@
 # Subsets Generation using Recursion — Step-by-step analysis
 
-![Subsets Recursion Tree](https://github.com/AvinashDogiparthi/DataStructuresAndAlgorithms/blob/main/ProblemSolvingUsingPatterns/src/H_Recursion/Q_RecursionSubsetsAndSubsequences/Subsets/recursionTree.PNG)
+![Subsets Recursion Tree](https://github.com/AvinashDogiparthi/DataStructuresAndAlgorithms/blob/main/ProblemSolvingUsingPatterns/src/H_Recursion/R_SubsetsGenerationUsingRecursion/recursionTree.PNG)
 
 ## Problem statement
 
