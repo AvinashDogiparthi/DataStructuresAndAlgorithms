@@ -13,7 +13,7 @@ For "abc", the subsequences are:
 
 The figure below visualizes how the recursion branches for each character (include ↙ / exclude ↘), and how we collect only **non-empty** subsequences at the leaves.
 
-![Recursion Tree](https://github.com/AvinashDogiparthi/DataStructuresAndAlgorithms/blob/main/ProblemSolvingUsingPatterns/src/I_RecursionSubsetsAndSubsequences/recursionTree.PNG)
+![Recursion Tree](https://github.com/AvinashDogiparthi/DataStructuresAndAlgorithms/blob/main/ProblemSolvingUsingPatterns/src/H_Recursion/Q_RecursionSubsequences/recursionTree.PNG)
 
 Result (ignoring empty):  
 `["abc", "ab", "ac", "a", "bc", "b", "c"]`
