@@ -13,6 +13,7 @@ class Solution {
         List<List<Integer>> result = new ArrayList<>();
         if (nums == null || nums.length == 0) return result;
 
+        // Arrays.sort(nums); // not necessary
         backtrack(result, new ArrayList<>(), nums, 0);
         return result;
     }
