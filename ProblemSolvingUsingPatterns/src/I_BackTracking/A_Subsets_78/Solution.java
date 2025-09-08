@@ -19,6 +19,7 @@ class Solution {
     }
 
     private static void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] nums, int start) {
+        System.out.println("start : "+start+" list : "+tempList);
         result.add(new ArrayList<>(tempList));
 
         for (int i = start; i < nums.length; i++) {
