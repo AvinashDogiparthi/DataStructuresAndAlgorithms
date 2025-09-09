@@ -4,7 +4,12 @@ package I_BackTracking.G_UniquePaths_62;
 import java.util.Arrays;
 
 class Solution {
-    public int uniquePaths(int m, int n) {
+
+    public static void main(String[] args) {
+        int paths = uniquePaths(3,7);
+        System.out.println(paths);
+    }
+    public static int uniquePaths(int m, int n) {
         int[][] memo = new int[m][n];
         for (int[] row : memo) {
             Arrays.fill(row, -1);
@@ -12,7 +17,7 @@ class Solution {
         return backtrack(0, 0, m, n, memo);
     }
 
-    private int backtrack(int row, int col, int m, int n, int[][] memo) {
+    private static int backtrack(int row, int col, int m, int n, int[][] memo) {
         if (row == m - 1 && col == n - 1) return 1;
 
         if (row >= m || col >= n) return 0;
@@ -22,6 +27,7 @@ class Solution {
         int down = backtrack(row + 1, col, m, n, memo);
         int right = backtrack(row, col + 1, m, n, memo);
 
-        return memo[row][col] = down + right;
+        memo[row][col] = down + right;
+        return down + right;
     }
 }
