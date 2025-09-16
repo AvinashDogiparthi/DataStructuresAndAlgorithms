@@ -1,12 +1,17 @@
 package I_BackTracking.N_QueensII_52;
 
 class Solution {
-    public int totalNQueens(int n) {
+
+    public static void main(String[] args) {
+        int count = totalNQueens(9);
+        System.out.println(count);
+    }
+    public static int totalNQueens(int n) {
        boolean[][] booleanArray = new boolean[n][n];
        return countPossibilityOfPlacingQueens(booleanArray,0);
     }
 
-    public int countPossibilityOfPlacingQueens(boolean[][] board, int row){
+    public static int countPossibilityOfPlacingQueens(boolean[][] board, int row){
 
         if(row == board.length){
             return 1;
@@ -26,7 +31,7 @@ class Solution {
         return count;
     }
 
-    private boolean isSafe(boolean[][] board, int row, int col) {
+    private static boolean isSafe(boolean[][] board, int row, int col) {
         // vertical check
         for (int i = 0; i < row; i++) {
             if (board[i][col]) return false;
