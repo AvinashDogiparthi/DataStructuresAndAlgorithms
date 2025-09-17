@@ -1,4 +1,4 @@
-package I_BackTracking.N_Queens_51;
+package I_BackTracking.K_Queens_51;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ class Solution {
         List<List<String>> list = solveNQueens(4);
         System.out.println(list);
     }
-    
+
     public static List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new ArrayList<>();
         boolean[][] board = new boolean[n][n];

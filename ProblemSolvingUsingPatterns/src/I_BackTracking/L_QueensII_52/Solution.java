@@ -1,4 +1,4 @@
-package I_BackTracking.N_QueensII_52;
+package I_BackTracking.L_QueensII_52;
 
 class Solution {
 
