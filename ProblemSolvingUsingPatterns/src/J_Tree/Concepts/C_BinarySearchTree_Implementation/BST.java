@@ -1,4 +1,4 @@
-package J_Tree.Concept.C_BinarySearchTree_Implementation;
+package J_Tree.Concepts.C_BinarySearchTree_Implementation;
 
 public class BST {
 

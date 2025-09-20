@@ -1,4 +1,4 @@
-package J_Tree.Concept.D_Traversal;
+package J_Tree.Concepts.D_Traversal;
 
 import java.util.Scanner;
 
