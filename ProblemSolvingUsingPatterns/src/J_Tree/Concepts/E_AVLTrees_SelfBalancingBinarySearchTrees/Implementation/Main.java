@@ -1,4 +1,4 @@
-package J_Tree.Concept.E_AVLTrees_SelfBalancingBinarySearchTrees.Implementation;
+package J_Tree.Concepts.E_AVLTrees_SelfBalancingBinarySearchTrees.Implementation;
 
 public class Main {
 

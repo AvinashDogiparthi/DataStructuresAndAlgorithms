@@ -1,4 +1,4 @@
-package J_Tree.Concept.B_Implementation;
+package J_Tree.Concepts.B_Implementation;
 
 import java.util.Scanner;
 
