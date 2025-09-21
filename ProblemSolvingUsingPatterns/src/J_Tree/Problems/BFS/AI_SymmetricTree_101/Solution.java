@@ -1,4 +1,4 @@
-package J_Tree.Problems.AI_SymmetricTree_101;
+package J_Tree.Problems.BFS.AI_SymmetricTree_101;
 
 import J_Tree.Problems.TreeNode;
 

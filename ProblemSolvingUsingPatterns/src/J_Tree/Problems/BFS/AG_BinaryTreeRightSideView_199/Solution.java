@@ -1,4 +1,4 @@
-package J_Tree.Problems.AC_AverageOfLevelsInBinaryTree_637;
+package J_Tree.Problems.BFS.AG_BinaryTreeRightSideView_199;
 
 import J_Tree.Problems.TreeNode;
 
@@ -23,14 +23,13 @@ import java.util.Queue;
  * }
  */
 class Solution {
-    public List<Double> averageOfLevels(TreeNode root) {
-
-        List<Double> levelAverages = new ArrayList<>();
+    public List<Integer> rightSideView(TreeNode root) {
+        
+        List<Integer> rightSideValues = new ArrayList<>();
 
         if(root == null){
             return new ArrayList<>();
         }
-
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
@@ -39,26 +38,25 @@ class Solution {
         while(!queue.isEmpty()){
 
             int levelSize = queue.size();
-            double levelSum = 0;
             List<Integer> currentLevelValues = new ArrayList<>();
 
             for(int i = 0;i<levelSize;i++){
 
                 TreeNode node = queue.poll();
-                levelSum = levelSum + node.val;
+                currentLevelValues.add(node.val);
 
                 if(node.left != null){
-                    queue.offer(node.left);
+                    queue.add(node.left);
                 }
 
                 if(node.right != null){
-                    queue.offer(node.right);
+                    queue.add(node.right);
                 }
             }
 
-            levelAverages.add((double) levelSum / levelSize );
+            rightSideValues.add(currentLevelValues.get(currentLevelValues.size()-1));
         }
 
-        return levelAverages;
+        return rightSideValues;
     }
 }

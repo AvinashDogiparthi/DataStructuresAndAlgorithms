@@ -1,4 +1,4 @@
-package J_Tree.Problems.AB_BinaryTreeLevelOrderTraversalII_107;
+package J_Tree.Problems.BFS.AE_BinaryTreeZigZagLevelOrderTraversal_103;
 
 import J_Tree.Problems.TreeNode;
 
@@ -19,19 +19,22 @@ import java.util.*;
  *     }
  * }
  */
-class SolutionUsingStack {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        Stack<List<Integer>> stack = new Stack<>();
+class SolutionUsingReverseGoodForSmallAndMediumTrees {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
 
         if(root == null){
             return new ArrayList<>();
         }
 
+
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
+        queue.add(root);
+
+        boolean reverse = false;
 
         while(!queue.isEmpty()){
-
+            
             int levelSize = queue.size();
             List<Integer> currentLevelValues = new ArrayList<>();
 
@@ -49,15 +52,14 @@ class SolutionUsingStack {
                 }
             }
 
-            stack.push(currentLevelValues);
+            if (reverse) {
+                Collections.reverse(currentLevelValues);
+            }
+            
+            result.add(currentLevelValues);
+            reverse = !reverse;
         }
 
-        List<List<Integer>> finalResult = new ArrayList<>();
-
-        while(!stack.isEmpty()){
-            finalResult.add(stack.pop());
-        }
-
-        return finalResult;
+        return result;
     }
 }
