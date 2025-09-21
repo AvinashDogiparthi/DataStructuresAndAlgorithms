@@ -1,11 +1,8 @@
-package J_Tree.Problems.AB_BinaryTreeLevelOrderTraversalII_107;
+package J_Tree.Problems.AE_BinaryTreeZigZagLevelOrderTraversal_103;
 
 import J_Tree.Problems.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -22,20 +19,22 @@ import java.util.Queue;
  *     }
  * }
  */
-class Solution {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-
+class SolutionUsingReverseGoodForSmallAndMediumTrees {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
 
         if(root == null){
-            return result;
+            return new ArrayList<>();
         }
 
+
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
+        queue.add(root);
+
+        boolean reverse = false;
 
         while(!queue.isEmpty()){
-
+            
             int levelSize = queue.size();
             List<Integer> currentLevelValues = new ArrayList<>();
 
@@ -53,8 +52,12 @@ class Solution {
                 }
             }
 
-            // Inserts at the given index, shifting the existing elements to the right.
-            result.add(0,currentLevelValues);
+            if (reverse) {
+                Collections.reverse(currentLevelValues);
+            }
+            
+            result.add(currentLevelValues);
+            reverse = !reverse;
         }
 
         return result;
