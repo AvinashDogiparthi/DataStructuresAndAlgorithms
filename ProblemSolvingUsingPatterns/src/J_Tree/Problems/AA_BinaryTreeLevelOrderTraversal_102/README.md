@@ -1,73 +1,53 @@
-# 🔍 Breadth First Search (BFS)
+# 102. Binary Tree Level Order Traversal
 
-## 📌 What is BFS?
-
-**Breadth First Search (BFS)** is a graph/tree traversal algorithm that explores **all nodes at the present depth level before moving to the next level**.
-
-- It starts from a **source node**.
-- Visits all neighbors first.
-- Then moves to neighbors of neighbors, and so on.
-
-👉 BFS is implemented using a **queue** (FIFO).
+ **Problem Link**: [LeetCode - Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
 ---
 
-## 📊 How BFS Works
+## Problem Statement
 
-1. Start from a source node.
-2. Put it in a queue and mark as visited.
-3. While the queue is not empty:
-    - Remove the front node from the queue.
-    - Visit all **unvisited neighbors** of this node.
-    - Add those neighbors to the queue.
-4. Repeat until the queue is empty.
+Given the root of a binary tree, return the **level order traversal** of its nodes' values.  
+(i.e., from left to right, level by level).
 
 ---
 
-## 📚 Example: BFS on a Graph
+## Examples
 
-Graph:
-
-```text
-
-        1
-       / \
-      2   3
-     / \
-    4   5
+### Example 1
+**Input:**
+root = [3,9,20,null,null,15,7]
 
 
-```
+**Output:**
+[[3],[9,20],[15,7]]
 
-### BFS Traversal (starting from node `1`):
-1. Start from the root node 1, add it to the queue.
-2. Pop from the queue → visit node 1, then add its children (2, 3) to the queue.
-3. Pop from the queue → visit node 2, then add its children (4, 5) to the queue.
-4. Pop from the queue → visit node 3 (no children).
-5. Pop from the queue → visit node 4 (no children).
-6. Pop from the queue → visit node 5 (no children).
-
-✅ BFS Order = **1 → 2 → 3 → 4 → 5**
 
 ---
 
-## Example: BFS on a Binary Tree
-```text
-    1
-   / \
-  2   3
- / \   \
-4   5   6
+### Example 2
+**Input:**
+root = [1]
 
-```
 
-### BFS Traversal:
-- Level 1: `1`
-- Level 2: `2, 3`
-- Level 3: `4, 5, 6`
+**Output:**
+[[1]]
 
-✅ BFS Order = **1 → 2 → 3 → 4 → 5 → 6**
 
-### When to use BFS
-- When answer lies near the root
-- When you are asked to do something related to level
+---
+
+### Example 3
+**Input:**
+root = []
+
+
+**Output:**
+[]
+
+
+---
+
+## Constraints
+- The number of nodes in the tree is in the range `[0, 2000]`.
+- `-1000 <= Node.val <= 1000`
+
+---
