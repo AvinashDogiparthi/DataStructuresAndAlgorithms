@@ -1,11 +1,8 @@
-package J_Tree.Problems.AG_BinaryTreeRightSideView_199;
+package J_Tree.Problems.BFS.AB_BinaryTreeLevelOrderTraversalII_107;
 
 import J_Tree.Problems.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -22,10 +19,9 @@ import java.util.Queue;
  *     }
  * }
  */
-class Solution {
-    public List<Integer> rightSideView(TreeNode root) {
-        
-        List<Integer> rightSideValues = new ArrayList<>();
+class SolutionUsingStack {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        Stack<List<Integer>> stack = new Stack<>();
 
         if(root == null){
             return new ArrayList<>();
@@ -33,7 +29,6 @@ class Solution {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-
 
         while(!queue.isEmpty()){
 
@@ -54,9 +49,15 @@ class Solution {
                 }
             }
 
-            rightSideValues.add(currentLevelValues.get(currentLevelValues.size()-1));
+            stack.push(currentLevelValues);
         }
 
-        return rightSideValues;
+        List<List<Integer>> finalResult = new ArrayList<>();
+
+        while(!stack.isEmpty()){
+            finalResult.add(stack.pop());
+        }
+
+        return finalResult;
     }
 }

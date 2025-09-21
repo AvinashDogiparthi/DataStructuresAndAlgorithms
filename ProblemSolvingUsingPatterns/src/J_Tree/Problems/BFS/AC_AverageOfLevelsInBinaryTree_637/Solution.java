@@ -1,8 +1,11 @@
-package J_Tree.Problems.AE_BinaryTreeZigZagLevelOrderTraversal_103;
+package J_Tree.Problems.BFS.AC_AverageOfLevelsInBinaryTree_637;
 
 import J_Tree.Problems.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Definition for a binary tree node.
@@ -19,9 +22,10 @@ import java.util.*;
  *     }
  * }
  */
-class SolutionUsingReverseGoodForSmallAndMediumTrees {
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
+class Solution {
+    public List<Double> averageOfLevels(TreeNode root) {
+
+        List<Double> levelAverages = new ArrayList<>();
 
         if(root == null){
             return new ArrayList<>();
@@ -29,37 +33,32 @@ class SolutionUsingReverseGoodForSmallAndMediumTrees {
 
 
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
+        queue.offer(root);
 
-        boolean reverse = false;
 
         while(!queue.isEmpty()){
-            
+
             int levelSize = queue.size();
+            double levelSum = 0;
             List<Integer> currentLevelValues = new ArrayList<>();
 
             for(int i = 0;i<levelSize;i++){
 
                 TreeNode node = queue.poll();
-                currentLevelValues.add(node.val);
+                levelSum = levelSum + node.val;
 
                 if(node.left != null){
-                    queue.add(node.left);
+                    queue.offer(node.left);
                 }
 
                 if(node.right != null){
-                    queue.add(node.right);
+                    queue.offer(node.right);
                 }
             }
 
-            if (reverse) {
-                Collections.reverse(currentLevelValues);
-            }
-            
-            result.add(currentLevelValues);
-            reverse = !reverse;
+            levelAverages.add((double) levelSum / levelSize );
         }
 
-        return result;
+        return levelAverages;
     }
 }

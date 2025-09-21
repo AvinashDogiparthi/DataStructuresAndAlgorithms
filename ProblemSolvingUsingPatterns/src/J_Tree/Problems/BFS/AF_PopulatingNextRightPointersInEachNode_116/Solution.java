@@ -1,4 +1,4 @@
-package J_Tree.Problems.AF_PopulatingNextRightPointersInEachNode_116;/*
+package J_Tree.Problems.BFS.AF_PopulatingNextRightPointersInEachNode_116;/*
 // Definition for a Node.
 class Node {
     public int val;

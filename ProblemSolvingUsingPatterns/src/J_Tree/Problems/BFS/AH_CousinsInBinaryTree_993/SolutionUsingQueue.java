@@ -1,10 +1,8 @@
-package J_Tree.Problems.AB_BinaryTreeLevelOrderTraversalII_107;
+package J_Tree.Problems.BFS.AH_CousinsInBinaryTree_993;
 
 import J_Tree.Problems.TreeNode;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
@@ -22,13 +20,11 @@ import java.util.Queue;
  *     }
  * }
  */
-class Solution {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-
-        List<List<Integer>> result = new ArrayList<>();
+class SolutionUsingQueue {
+    public boolean isCousins(TreeNode root, int x, int y) {
 
         if(root == null){
-            return result;
+            return false;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
@@ -37,12 +33,25 @@ class Solution {
         while(!queue.isEmpty()){
 
             int levelSize = queue.size();
-            List<Integer> currentLevelValues = new ArrayList<>();
+
+            boolean foundX = false;
+            boolean foundY = false;
 
             for(int i = 0;i<levelSize;i++){
 
                 TreeNode node = queue.poll();
-                currentLevelValues.add(node.val);
+
+                if(node.val == x) foundX = true;
+                if(node.val == y) foundY = true;
+
+                if(node.left != null && node.right != null){
+
+                    // siblings check
+                    if(node.left.val == x && node.right.val == y ||
+                    node.right.val == x && node.left.val == y){
+                        return false;
+                    }
+                }
 
                 if(node.left != null){
                     queue.add(node.left);
@@ -51,12 +60,14 @@ class Solution {
                 if(node.right != null){
                     queue.add(node.right);
                 }
+
             }
 
-            // Inserts at the given index, shifting the existing elements to the right.
-            result.add(0,currentLevelValues);
+            if(foundX && foundY){
+                return true;
+            }
         }
 
-        return result;
+        return false;
     }
 }

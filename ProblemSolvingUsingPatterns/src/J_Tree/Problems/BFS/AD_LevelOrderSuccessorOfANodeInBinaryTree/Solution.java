@@ -1,11 +1,9 @@
-package J_Tree.Problems.AD_LevelOrderSuccessorOfANodeInBinaryTree;
+package J_Tree.Problems.BFS.AD_LevelOrderSuccessorOfANodeInBinaryTree;
 
-import J_Tree.Concepts.D_Traversal.BinaryTree;
 import J_Tree.Problems.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class Solution {
 

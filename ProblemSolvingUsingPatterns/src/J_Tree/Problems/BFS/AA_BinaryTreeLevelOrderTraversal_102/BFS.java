@@ -1,4 +1,4 @@
-package J_Tree.Problems.AA_BinaryTreeLevelOrderTraversal_102;
+package J_Tree.Problems.BFS.AA_BinaryTreeLevelOrderTraversal_102;
 
 import J_Tree.Problems.TreeNode;
 
