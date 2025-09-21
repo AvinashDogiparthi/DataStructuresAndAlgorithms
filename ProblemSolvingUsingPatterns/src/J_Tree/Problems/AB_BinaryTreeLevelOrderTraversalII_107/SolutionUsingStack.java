@@ -2,10 +2,7 @@ package J_Tree.Problems.AB_BinaryTreeLevelOrderTraversalII_107;
 
 import J_Tree.Problems.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -22,13 +19,12 @@ import java.util.Queue;
  *     }
  * }
  */
-class Solution {
+class SolutionUsingStack {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-
-        List<List<Integer>> result = new ArrayList<>();
+        Stack<List<Integer>> stack = new Stack<>();
 
         if(root == null){
-            return result;
+            return new ArrayList<>();
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
@@ -53,10 +49,15 @@ class Solution {
                 }
             }
 
-            // Inserts at the given index, shifting the existing elements to the right.
-            result.add(0,currentLevelValues);
+            stack.push(currentLevelValues);
         }
 
-        return result;
+        List<List<Integer>> finalResult = new ArrayList<>();
+
+        while(!stack.isEmpty()){
+            finalResult.add(stack.pop());
+        }
+
+        return finalResult;
     }
 }
