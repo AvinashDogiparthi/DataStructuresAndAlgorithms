@@ -1,4 +1,4 @@
-package J_Tree.Problems.DFS.AE_LowestCommonAchestorOfABinarySearchTree_235;
+package J_Tree.Problems.BST.AB_LowestCommonAchestorOfABinarySearchTree_235;
 
 import J_Tree.Problems.TreeNode;
 
