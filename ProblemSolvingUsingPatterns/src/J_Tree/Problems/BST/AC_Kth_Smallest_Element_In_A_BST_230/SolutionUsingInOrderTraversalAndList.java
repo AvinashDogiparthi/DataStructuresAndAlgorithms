@@ -1,4 +1,4 @@
-package J_Tree.Problems.DFS.AF_Kth_Smallest_Element_In_A_BST_230;
+package J_Tree.Problems.BST.AC_Kth_Smallest_Element_In_A_BST_230;
 
 import J_Tree.Problems.TreeNode;
 
