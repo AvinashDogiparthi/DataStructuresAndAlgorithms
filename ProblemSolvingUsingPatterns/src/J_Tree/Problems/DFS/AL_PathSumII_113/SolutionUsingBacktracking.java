@@ -20,7 +20,7 @@ import java.util.List;
  *     }
  * }
  */
-class Solution {
+class SolutionUsingBacktracking {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
 
         List<List<Integer>> result = new ArrayList<>();
