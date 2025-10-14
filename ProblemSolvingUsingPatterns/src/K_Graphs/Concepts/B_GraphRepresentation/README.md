@@ -72,9 +72,12 @@ Adjacency List:
 
 ---
 
-### Summary
+## Summary: Graph Representations
 
-| Representation      | Space Complexity | Best Use Case                       |
-|--------------------|----------------|------------------------------------|
-| Adjacency Matrix    | O(V²)          | Dense graphs                       |
-| Adjacency List      | O(V + E)       | Sparse graphs                       |
+| Representation              | **Adjacency Matrix** | **Adjacency List** |
+|-----------------------------|----------------------|--------------------|
+| **Space Complexity**        | O(V²)                | O(V + E)           |
+| **Edge Lookup Time**        | O(1)                 | O(degree of node)  |
+| **Iteration Over Neighbors**| O(V)                 | O(degree of node)  |
+| **Best For**                | Dense Graphs         | Sparse Graphs      |
+
