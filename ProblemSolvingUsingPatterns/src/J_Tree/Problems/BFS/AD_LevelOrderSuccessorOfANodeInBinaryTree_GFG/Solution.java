@@ -1,4 +1,4 @@
-package J_Tree.Problems.BFS.AD_LevelOrderSuccessorOfANodeInBinaryTree;
+package J_Tree.Problems.BFS.AD_LevelOrderSuccessorOfANodeInBinaryTree_GFG;
 
 import J_Tree.Problems.TreeNode;
 
