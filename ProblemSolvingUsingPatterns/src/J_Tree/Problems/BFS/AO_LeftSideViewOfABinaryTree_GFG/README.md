@@ -44,7 +44,7 @@ From the left side of the tree, only the nodes `1`, `2`, `4`, and `5` are visibl
 
 ---
 
-## 🧾 Constraints
+## Constraints
 
 - `0 ≤ number of nodes ≤ 10⁵`
 - `0 ≤ node -> data ≤ 10⁵`
