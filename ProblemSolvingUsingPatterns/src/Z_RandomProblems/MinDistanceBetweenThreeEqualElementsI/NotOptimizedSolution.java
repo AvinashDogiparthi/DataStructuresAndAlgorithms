@@ -1,4 +1,4 @@
-package A_Two_Pointers.X_MinDistanceBetweenThreeEqualElementsI;
+package Z_RandomProblems.MinDistanceBetweenThreeEqualElementsI;
 
 class NotOptimizedSolution {
     public int minimumDistance(int[] nums) {
