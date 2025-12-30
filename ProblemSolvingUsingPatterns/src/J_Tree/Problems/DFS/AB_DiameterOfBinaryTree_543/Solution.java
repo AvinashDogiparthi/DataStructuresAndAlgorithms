@@ -18,25 +18,27 @@ import J_Tree.Problems.TreeNode;
  * }
  */
 class Solution {
-    int diameter = 0;
+
+    public int diameter = Integer.MIN_VALUE;
     public int diameterOfBinaryTree(TreeNode root) {
+
         height(root);
 
-        return diameter-1;
+        return diameter;
     }
 
-    int height(TreeNode node){
+    public int height(TreeNode node){
 
         if(node == null){
             return 0;
         }
 
-        int leftHeight = height(node.left);
-        int rightHeight = height(node.right);
+        int left = height(node.left);
+        int right = height(node.right);
 
-        int recursiveDiameter = leftHeight + rightHeight + 1;
-        diameter = Math.max(recursiveDiameter, diameter);
+        int recursiveDiameter = left + right;
+        diameter = Math.max(recursiveDiameter,diameter);
 
-        return Math.max(leftHeight,rightHeight)+1;
+        return Math.max(left,right) + 1;
     }
 }
