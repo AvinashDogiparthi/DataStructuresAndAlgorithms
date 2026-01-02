@@ -3,7 +3,6 @@ package J_Tree.Problems.DFS.AD_FlattenBinaryTreeToLinkedList_114;
 import J_Tree.Problems.TreeNode;
 
 /**
- * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
  *     TreeNode left;
