@@ -18,14 +18,19 @@ public class SolutionUsingTwoPointers {
     }
 
     private int processString(char[] chars) {
-        int k = 0;
-        for (char c : chars) {
-            if (c != '#') {
-                chars[k++] = c;
-            } else if (k > 0) {
-                k--;
+        int writeIndex = 0;
+
+        for (char currentChar : chars) {
+            if (currentChar == '#') {
+                if (writeIndex > 0) {
+                    writeIndex--;
+                }
+            } else {
+                chars[writeIndex++] = currentChar;
             }
         }
-        return k;
+
+        return writeIndex;
     }
+
 }

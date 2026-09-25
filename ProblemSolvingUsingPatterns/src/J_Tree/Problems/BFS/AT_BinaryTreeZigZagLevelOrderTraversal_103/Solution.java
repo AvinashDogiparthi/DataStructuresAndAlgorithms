@@ -1,4 +1,4 @@
-package J_Tree.Problems.BFS.AE_BinaryTreeZigZagLevelOrderTraversal_103;
+package J_Tree.Problems.BFS.AT_BinaryTreeZigZagLevelOrderTraversal_103;
 
 import J_Tree.Problems.TreeNode;
 

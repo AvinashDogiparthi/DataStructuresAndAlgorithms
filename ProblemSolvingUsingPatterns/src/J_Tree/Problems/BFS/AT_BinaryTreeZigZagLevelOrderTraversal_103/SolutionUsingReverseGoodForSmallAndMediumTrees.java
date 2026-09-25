@@ -1,11 +1,8 @@
-package J_Tree.Problems.BFS.AG_BinaryTreeRightSideView_199;
+package J_Tree.Problems.BFS.AT_BinaryTreeZigZagLevelOrderTraversal_103;
 
 import J_Tree.Problems.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Definition for a binary tree node.
@@ -22,21 +19,22 @@ import java.util.Queue;
  *     }
  * }
  */
-class Solution {
-    public List<Integer> rightSideView(TreeNode root) {
-        
-        List<Integer> rightSideValues = new ArrayList<>();
+class SolutionUsingReverseGoodForSmallAndMediumTrees {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
 
         if(root == null){
             return new ArrayList<>();
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
 
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        boolean reverse = false;
 
         while(!queue.isEmpty()){
-
+            
             int levelSize = queue.size();
             List<Integer> currentLevelValues = new ArrayList<>();
 
@@ -54,9 +52,14 @@ class Solution {
                 }
             }
 
-            rightSideValues.add(currentLevelValues.get(currentLevelValues.size()-1));
+            if (reverse) {
+                Collections.reverse(currentLevelValues);
+            }
+            
+            result.add(currentLevelValues);
+            reverse = !reverse;
         }
 
-        return rightSideValues;
+        return result;
     }
 }

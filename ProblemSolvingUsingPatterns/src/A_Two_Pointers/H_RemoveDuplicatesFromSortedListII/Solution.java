@@ -23,7 +23,7 @@ public class Solution {
 
                 previous.next = current.next;
             } else {
-                previous = previous.next;
+                previous = current;
             }
 
             current = current.next;
