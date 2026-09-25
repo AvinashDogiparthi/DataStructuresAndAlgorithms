@@ -10,8 +10,8 @@ public class Solution {
 
         while(mid<=fast){
             if (nums[mid] == 0) { swap(nums, slow++, mid++); }
-            else if (nums[mid] == 2) { swap(nums, mid, fast--); }
             else if (nums[mid] == 1) { mid++; }
+            else if (nums[mid] == 2) { swap(nums, mid, fast--); }
         }
     }
 
