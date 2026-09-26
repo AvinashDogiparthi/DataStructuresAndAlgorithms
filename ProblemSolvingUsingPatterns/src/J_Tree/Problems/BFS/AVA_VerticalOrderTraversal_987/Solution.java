@@ -7,76 +7,57 @@ import java.util.*;
 class Solution {
     public List<List<Integer>> verticalTraversal(TreeNode root) {
 
-        if(root == null){
-            return new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
         }
 
+        TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
 
-        Queue<Pair> queue = new LinkedList<>();
-        queue.offer(new Pair(0,root));
+        Queue<Tuple> queue = new LinkedList<>();
+        queue.offer(new Tuple(root, 0, 0));
 
-        Map<Integer,List<Integer>> mapOfLineValues = new TreeMap<>();
+        while (!queue.isEmpty()) {
+            Tuple current = queue.poll();
+            TreeNode node = current.node;
+            int row = current.row;
+            int col = current.col;
 
-        while(!queue.isEmpty()){
+            map.putIfAbsent(col, new TreeMap<>());
+            map.get(col).putIfAbsent(row, new PriorityQueue<>());
+            map.get(col).get(row).offer(node.val);
 
-            int levelSize = queue.size();
+            if (node.left != null) {
+                queue.offer(new Tuple(node.left, row + 1, col - 1));
+            }
 
-            for(int i = 0;i<levelSize;i++){
-
-                Pair currentPair = queue.poll();
-                int currentLine = currentPair.getLine();
-                TreeNode currentNode = currentPair.getNode();
-
-                if(mapOfLineValues.containsKey(currentLine)){
-                     mapOfLineValues.get(currentLine).add(currentNode.val);
-                } else {
-                    List<Integer> lineValues = new ArrayList<>();
-                    lineValues.add(currentNode.val);
-                    mapOfLineValues.put(currentLine,lineValues);
-                }
-
-                if(currentNode.left != null){
-                    queue.offer(new Pair(currentLine-1,currentNode.left));
-                }
-
-                if(currentNode.right != null){
-                    queue.offer(new Pair(currentLine+1, currentNode.right));
-                }
+            if (node.right != null) {
+                queue.offer(new Tuple(node.right, row + 1, col + 1));
             }
         }
 
-        List<List<Integer>> levelByLevel = new ArrayList<>();
-
-        for(int i : mapOfLineValues.keySet()){
-            List<Integer> listOfValues = mapOfLineValues.get(i);
-            Collections.sort(listOfValues);
-            levelByLevel.add(listOfValues);
+        for (TreeMap<Integer, PriorityQueue<Integer>> rowMap : map.values()) {
+            List<Integer> colList = new ArrayList<>();
+            for (PriorityQueue<Integer> pq : rowMap.values()) {
+                while (!pq.isEmpty()) {
+                    colList.add(pq.poll());
+                }
+            }
+            result.add(colList);
         }
 
-        return levelByLevel;
-        
+        return result;
     }
 }
 
-class Pair{
-
-    int line;
+class Tuple {
     TreeNode node;
+    int row;
+    int col;
 
-    Pair(){
-
-    }
-
-    Pair(int lineNumber, TreeNode node){
-        this.line = lineNumber;
+    public Tuple(TreeNode node, int row, int col) {
         this.node = node;
-    }
-
-    public int getLine(){
-        return this.line;
-    }
-
-    public TreeNode getNode(){
-        return this.node;
+        this.row = row;
+        this.col = col;
     }
 }
