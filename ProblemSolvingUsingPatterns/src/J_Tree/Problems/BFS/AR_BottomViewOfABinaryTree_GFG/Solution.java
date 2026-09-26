@@ -4,78 +4,69 @@ import java.util.*;
 
 class Solution {
     public ArrayList<Integer> bottomView(Node root) {
-        
-        List<Integer> list = new ArrayList<>();
-        
+
         if(root == null){
-            return new ArrayList<>(list);
+            return new ArrayList<>();
         }
-        
-        bfsTraversal(root,list);
-        return new ArrayList<>(list);
-    }
-    
-    public void bfsTraversal(Node root, List<Integer> list){
-        
+
         Queue<Pair> queue = new LinkedList<>();
-        queue.offer(new Pair(root,0));
-        
-        Map<Integer,List<Node>> map = new TreeMap<>();
-        List<Node> listNode = new ArrayList<>();
-        listNode.add(root);
-        map.put(0,listNode);
-        
-        
+        queue.offer(new Pair(0, root));
+
+        Map<Integer, Node> mapOfLine = new TreeMap<>();
+        ArrayList<Integer> bottomview = new ArrayList<>();
+
         while(!queue.isEmpty()){
-            
             int levelSize = queue.size();
-            
-            for(int i  = 0;i<levelSize;i++){
-                
+
+            for(int i = 0;i<levelSize;i++){
+
                 Pair currentPair = queue.poll();
+                int currentLine = currentPair.getLine();
                 Node currentNode = currentPair.getNode();
-                int line = currentPair.getLine();
-                
-                if(!map.containsKey(line)){
-                    List<Node> trackingList = new ArrayList<>();
-                    trackingList.add(currentNode);
-                    map.put(line,trackingList);
-                } else {
-                    map.get(line).add(currentNode);
-                }
-                
-                
+
+                mapOfLine.put(currentLine,currentNode);
+
                 if(currentNode.left != null){
-                    queue.offer(new Pair(currentNode.left,line-1));
+                    queue.offer(new Pair(currentLine-1, currentNode.left));
                 }
-                
+
                 if(currentNode.right != null){
-                    queue.offer(new Pair(currentNode.right,line+1));
+                    queue.offer(new Pair(currentLine+1, currentNode.right));
                 }
             }
         }
-        
-        for(int key : map.keySet()){
-            List<Node> listOfNodes = map.get(key);
-            list.add(listOfNodes.get(listOfNodes.size()-1).data);
+
+        for(int i : mapOfLine.keySet()){
+            Node currentNode = mapOfLine.get(i);
+            bottomview.add(currentNode.data);
         }
+
+        return bottomview;
+
     }
-    
-    static class Pair{
-        Node node;
-        int lineNumber;
-        
-        Pair(Node node, int lineNumber){
-            this.node = node;
-            this.lineNumber = lineNumber;
-        }
-        
-        Node getNode(){
-            return this.node;
-        }
-        
-        int getLine(){
-            return this.lineNumber;
-        }
+}
+
+
+class Pair{
+
+    int lineNumber;
+    Node node;
+
+    Pair(){
+
+    }
+
+    Pair(int lineNumber, Node node){
+        this.lineNumber = lineNumber;
+        this.node = node;
+    }
+
+
+    public int getLine(){
+        return this.lineNumber;
+    }
+
+    public Node getNode(){
+        return this.node;
     }
 }
