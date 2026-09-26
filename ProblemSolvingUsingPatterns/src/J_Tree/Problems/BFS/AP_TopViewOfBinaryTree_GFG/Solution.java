@@ -5,71 +5,72 @@ import java.util.*;
 
 class Solution {
     public ArrayList<Integer> topView(Node root) {
-        
-        List<Integer> list = new ArrayList<>();
-        
+
         if(root == null){
-            return new ArrayList<>(list);
+            return new ArrayList<>();
         }
-        
-        
-        bfsTraversal(root,list);
-        return new ArrayList<>(list);
-    }
-    
-    public void bfsTraversal(Node root, List<Integer> list){
-        
+
         Queue<Pair> queue = new LinkedList<>();
-        queue.offer(new Pair(root,0));
-        
-        Map<Integer,Node> map = new TreeMap<>();
-        map.put(0,root);
-        
+        Pair rootPair = new Pair(root,0);
+
+        queue.offer(rootPair);
+
+        Map<Integer,Node> lineAndValue = new TreeMap<>();
+
         while(!queue.isEmpty()){
-            
+
             int levelSize = queue.size();
-            
+
             for(int i = 0;i<levelSize;i++){
-                
+
                 Pair currentPair = queue.poll();
                 Node currentNode = currentPair.getNode();
-                int currentLine = currentPair.getLine();
-                
-                if(!map.containsKey(currentLine)){
-                    map.put(currentLine,currentNode);
+                int lineNumber = currentPair.getLineNumber();
+
+                if(!lineAndValue.containsKey(currentPair.getLineNumber())){
+                    lineAndValue.put(lineNumber,currentNode);
                 }
-                
+
                 if(currentNode.left != null){
-                    queue.offer(new Pair(currentNode.left,currentLine-1));
+                    queue.offer(new Pair(currentNode.left, lineNumber-1));
                 }
-                
+
                 if(currentNode.right != null){
-                    queue.offer(new Pair(currentNode.right, currentLine+1));
+                    queue.offer(new Pair(currentNode.right, lineNumber+1));
                 }
             }
         }
-        
-        for(int key : map.keySet()){
-            Node node = map.get(key);
-            list.add(node.data);
+
+        ArrayList<Integer> topViewElements = new ArrayList<>();
+
+        for(int i : lineAndValue.keySet()){
+            Node currentNode = lineAndValue.get(i);
+            topViewElements.add(currentNode.data);
         }
+
+        return topViewElements;
+
     }
-    
-    static class Pair{
-        Node node;
-        int linenumber;
-        
-        Pair(Node node, int lineNumber){
-            this.node = node;
-            this.linenumber = lineNumber;
-        }
-        
-        Node getNode(){
-            return this.node;
-        }
-        
-        int getLine(){
-            return this.linenumber;
-        }
+}
+
+class Pair{
+    Node node;
+    int lineNumber;
+
+    Pair(){
+
+    }
+
+    Pair(Node node, int linenumber){
+        this.node = node;
+        this.lineNumber = linenumber;
+    }
+
+    public int getLineNumber(){
+        return this.lineNumber;
+    }
+
+    public Node getNode(){
+        return this.node;
     }
 }
