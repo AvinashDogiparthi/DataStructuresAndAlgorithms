@@ -21,26 +21,22 @@ import java.util.List;
  * }
  */
 class Solution {
+
+    List<Integer> result = new ArrayList<>();
     public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> listOfValues = new ArrayList<>();
 
-        if(root == null){
-            return listOfValues;
-        }
-
-        postOrder(root,listOfValues);
-        return listOfValues;
+        postOrder(root);
+        return result;
     }
 
-    public void postOrder(TreeNode node,List<Integer> listOfValues){
+    public void postOrder(TreeNode node){
 
         if(node == null){
             return;
         }
 
-
-        postOrder(node.left,listOfValues);
-        postOrder(node.right,listOfValues);
-        listOfValues.add(node.val);
+        postOrder(node.left);
+        postOrder(node.right);
+        result.add(node.val);
     }
 }
