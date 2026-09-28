@@ -20,26 +20,38 @@ import java.util.List;
  *     }
  * }
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
+    List<Integer> result = new ArrayList<>();
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> listOfValues = new ArrayList<>();
+        preOrder(root);
 
-        if(root == null){
-            return listOfValues;
-        }
-
-        preOrder(root,listOfValues);
-        return listOfValues;
+        return result;
     }
 
-    public void preOrder(TreeNode node, List<Integer> listOfValues){
+    public void preOrder(TreeNode node){
 
         if(node == null){
             return;
         }
 
-        listOfValues.add(node.val);
-        preOrder(node.left,listOfValues);
-        preOrder(node.right,listOfValues);
+        System.out.println("Adding value : "+node.val);
+        result.add(node.val);
+        preOrder(node.left);
+        preOrder(node.right);
     }
 }

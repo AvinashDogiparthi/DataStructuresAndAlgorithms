@@ -21,26 +21,20 @@ import java.util.List;
  * }
  */
 class Solution {
+    List<Integer> result = new ArrayList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
-
-        List<Integer> listOfvalues = new ArrayList<>();
-
-        if(root == null){
-            return listOfvalues;
-        }
-
-        performInOrderTraversal(root,listOfvalues);
-        return listOfvalues;
+        inOrder(root);
+        return result;
     }
 
-    public void performInOrderTraversal(TreeNode node, List<Integer> listOfValues){
+    public void inOrder(TreeNode node){
 
         if(node == null){
             return;
         }
 
-        performInOrderTraversal(node.left,listOfValues);
-        listOfValues.add(node.val);
-        performInOrderTraversal(node.right,listOfValues);
+        inOrder(node.left);
+        result.add(node.val);
+        inOrder(node.right);
     }
 }
