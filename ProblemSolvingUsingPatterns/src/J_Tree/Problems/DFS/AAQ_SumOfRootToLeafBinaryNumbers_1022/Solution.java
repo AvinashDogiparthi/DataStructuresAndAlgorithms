@@ -2,6 +2,9 @@ package J_Tree.Problems.DFS.AAQ_SumOfRootToLeafBinaryNumbers_1022;
 
 import J_Tree.Problems.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -18,24 +21,29 @@ import J_Tree.Problems.TreeNode;
  * }
  */
 class Solution {
+
+    List<String> listOfValues = new ArrayList<>();
+    int sum = 0;
+
     public int sumRootToLeaf(TreeNode root) {
-        return getTotalSum(root, 0);
+        traverseAndCheck(root,"");
+        return sum;
     }
 
-    private int getTotalSum(TreeNode node, int current) {
-        if (node == null) {
-            return 0;
+    public void traverseAndCheck(TreeNode node, String temp){
+
+        if(node == null){
+            return;
         }
 
-        current = (current << 1) | node.val;
-
-        if (node.left == null && node.right == null) {
-            return current;
+        if(node.left == null && node.right == null){
+            temp = temp + Integer.toString(node.val);
+            sum = sum + Integer.parseInt(temp,2);
+        } else {
+            temp = temp + Integer.toString(node.val);
         }
 
-        int leftSum = getTotalSum(node.left, current);
-        int rightSum = getTotalSum(node.right, current);
-
-        return leftSum + rightSum;
+        traverseAndCheck(node.left,temp);
+        traverseAndCheck(node.right,temp);
     }
 }
