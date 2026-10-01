@@ -1,4 +1,4 @@
-package J_Tree.Problems.DFS.AU_SumOfLeftLeaves_404;
+package J_Tree.Problems.DFS.AAR_SumOfLeftLeaves_404;
 
 import J_Tree.Problems.TreeNode;
 
@@ -17,28 +17,25 @@ import J_Tree.Problems.TreeNode;
  *     }
  * }
  */
-class SolutionUsingSum {
-    
+class Solution {
+
     int sum = 0;
     public int sumOfLeftLeaves(TreeNode root) {
-        helper(root,false);
+        iterateAndCheck(root,false);
+
         return sum;
     }
 
-    public void helper(TreeNode node, boolean isLeft){
-
+    public void iterateAndCheck(TreeNode node, boolean isLeft){
         if(node == null){
             return;
         }
 
-        if(node.left == null && node.right == null){
-            if(isLeft){
-                sum = sum + node.val;
-            }
-            return;
+        if(isLeft && (node.left == null && node.right == null)){
+            sum = sum + node.val;
         }
 
-        helper(node.left,true);
-        helper(node.right,false);
+        iterateAndCheck(node.left,true);
+        iterateAndCheck(node.right,false);
     }
 }
