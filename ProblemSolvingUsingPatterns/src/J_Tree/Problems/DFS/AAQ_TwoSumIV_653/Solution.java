@@ -31,12 +31,13 @@ class Solution {
 
     public void travrseAndCheck(TreeNode node, int target){
 
-        if(node == null || isSumAvailable){
+        if(node == null){
             return;
         }
 
         if(setOfValues.contains(target - node.val)){
             isSumAvailable = true;
+            return;
         }
 
         setOfValues.add(node.val);
