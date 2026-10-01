@@ -20,6 +20,21 @@ import java.util.Set;
  *     }
  * }
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
 
     Set<Integer> setOfValues = new HashSet<>();
@@ -31,13 +46,12 @@ class Solution {
 
     public void travrseAndCheck(TreeNode node, int target){
 
-        if(node == null){
+        if(node == null || isSumAvailable){
             return;
         }
 
         if(setOfValues.contains(target - node.val)){
             isSumAvailable = true;
-            return;
         }
 
         setOfValues.add(node.val);
