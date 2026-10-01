@@ -1,9 +1,6 @@
-package J_Tree.Problems.DFS.AAQ_SumOfRootToLeafBinaryNumbers_1022;
+package J_Tree.Problems.DFS.AAT_SmallestStringStartingFromLeaf_988;
 
 import J_Tree.Problems.TreeNode;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Definition for a binary tree node.
@@ -22,28 +19,27 @@ import java.util.List;
  */
 class Solution {
 
-    List<String> listOfValues = new ArrayList<>();
-    int sum = 0;
-
-    public int sumRootToLeaf(TreeNode root) {
+    String smallest =  "";
+    public String smallestFromLeaf(TreeNode root) {
         traverseAndCheck(root,"");
-        return sum;
+        return smallest;
     }
 
-    public void traverseAndCheck(TreeNode node, String temp){
+    public void traverseAndCheck(TreeNode node, String currentString){
 
         if(node == null){
             return;
         }
 
+        currentString =  (char) ('a' + node.val) + currentString;
+
         if(node.left == null && node.right == null){
-            temp = temp + Integer.toString(node.val);
-            sum = sum + Integer.parseInt(temp,2);
-        } else {
-            temp = temp + Integer.toString(node.val);
+            if(smallest.isEmpty() || currentString.compareTo(smallest) < 0){
+                smallest = currentString;
+            }
         }
 
-        traverseAndCheck(node.left,temp);
-        traverseAndCheck(node.right,temp);
+        traverseAndCheck(node.left, currentString);
+        traverseAndCheck(node.right, currentString);
     }
 }
